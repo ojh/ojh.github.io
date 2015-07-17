@@ -1,0 +1,187 @@
+// HOMEPAGE BANNER
+
+.banner {
+  text-align: center;
+  padding: 80px 0 0 0;
+
+  @media (max-width: 500px) {
+    padding: 60px 0 0 0;
+  }
+
+  img {
+    webkit-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+  h1 {
+    display: inline-block;
+    font-size: 40px;
+    margin: 20px 0 20px 0;
+  }
+
+  .intro {
+    max-width: 330px;
+  }
+
+  .icons {
+    margin-top: 30px;
+  }
+
+  .icon {
+    display: inline-block;
+    background-color: $link-color;
+    color: $white;
+    padding: 8px;
+    border-radius: 50%;
+    margin: 0 1px;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    .fa {
+      display: block;
+      width: 18px;
+      height: 18px;
+      line-height: 18px;
+    }
+  }
+
+  .envelope {
+    font-size: 14px;
+    position: relative;
+    top: -2px;
+  }
+}
+
+// ABOUT SECTION
+.homepage #about {
+  padding-top: 81px;
+
+  @media (max-width: 500px) {
+    padding-top: 66px;
+  }
+}
+
+.homepage .summary {
+  margin: 70px 0 0 0;
+}
+
+.about-intro {
+  font-size: 30px;
+  line-height: 1.2;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.tidbits {
+  margin-bottom: 20px;
+}
+
+.tidbit {
+  text-align: center;
+  clear: both;
+  padding: 15px 0;
+  max-width: 600px;
+  margin: 0 auto;
+
+  .illustration {
+    margin-bottom: 10px;
+  }
+}
+
+// PROJECT SECTION
+#projects {
+  padding-top: 81px;
+}
+
+.homepage .project {
+  margin: 0 0 80px 0;
+
+  @media (max-width: 549px) {
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+
+  .logo {
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  img {
+    border-radius: 50%;
+    webkit-border-radius: 50%;
+
+    @media (max-width: 549px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  .button {
+    margin-top: 15px;
+  }
+
+  &:first-child {
+    margin-top: 80px;
+  }
+}
+
+// POSTS SECTION
+.homepage .post {
+  display: block;
+  border-top: 1px solid $opaque-grey;
+  background-color: $opaque-white;
+  position: relative;
+
+  &:first-child {
+    border-top: 0;
+  }
+
+  &:hover {
+    background-image: url('../../assets/img/diagonal_10px_light_grey.png');
+  }
+
+  h3 {
+    font-size: 22px;
+    max-width: 720px;
+    line-height: 30px;
+    padding: 25px 0;
+
+    @media (max-width: 1200px) {
+      float: none;
+      padding-bottom: 5px;
+      max-width: 100%;
+    }
+  }
+
+  .meta {
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+
+    @media (max-width: 1200px) {
+      position: static;
+      float: left;
+      line-height: 20px;
+      padding-bottom: 25px;
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+    }
+
+  }
+
+  h3,
+  .meta {
+    margin: 0;
+  }
+}

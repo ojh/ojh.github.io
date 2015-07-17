@@ -1,11 +1,22 @@
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{% if site.title %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ site.description }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-    <meta name="description" content="{{ site.description }}">
+  <!-- TODO: Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- TODO: Add FontAwesome & Compass to Gemfile and remove link to CDN
+        (http://fontawesome.io/get-started/#ruby-gem-sass)
+  -->
+
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,400italic|Anonymous+Pro:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="{{ "/assets/css/screen.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/assets/css/print.css" | prepend: site.baseurl }}" media="print">
+  <link rel="stylesheet" href="{{ "/assets/css/ie.css" | prepend: site.baseurl }}">
+
+  <script src="{{ "/assets/js/vendor/modernizr-2.6.2.min.js" | prepend: site.baseurl }}"></script>
 </head>

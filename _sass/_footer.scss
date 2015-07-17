@@ -1,0 +1,58 @@
+footer {
+  font-size: 15px;
+  border-top: 1px solid $opaque-grey;
+  background-color: rgba(255, 255, 255, 0.4);
+
+  .container {
+    margin: 20px auto;
+  }
+
+  .license {
+    display: inline-block;
+    margin-right: 10px;
+    height: 31px;
+
+    @media (max-width: 1130px) {
+      display: none;
+    }
+  }
+
+  .text {
+    line-height: 31px;
+  }
+
+  @media (max-width: 1000px) {
+    .text.pull-right,
+    .text.pull-left {
+      float: none;
+      display: block;
+      line-height: 1.4;
+      padding: 5px 0;
+      text-align: center;
+    }
+  }
+}
+
+
+// Sticky footer
+
+@media (min-width: 1000px) {
+  * {
+    margin: 0;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  #wrap {
+    min-height: 100%;
+    height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+    height: 100%;
+    margin: 0 auto -71px; /* the bottom margin is the negative value of the footer's height */
+  }
+
+  footer, .push {
+    height: 71px; /* .push must be the same height as .footer */
+  }
+}

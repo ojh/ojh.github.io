@@ -1,23 +1,177 @@
 ---
 layout: default
+namespace: homepage
 ---
 
-<div class="home">
+<section class="banner">
+  <div class="container text-bg">
+    <img src="/assets/img/profile-image.jpg" alt="Olivier Harris" />
+    <div>
+      <h1>Olivier Harris</h1>
+    </div>
+    <div class="intro">
+      <p>
+        Web developer, project manager &amp; co-founder of
+        <a href="http://kabucreative.com">Kabu Creative</a>
+      </p>
+    </div>
+    <div class="icons">
+      <a href="https://github.com/ojh" target="_blank" class="icon"><i class="fa fa-github"></i></a>
+      <a href="https://twitter.com/OlivierHarris" target="_blank" class="icon"><i class="fa fa-twitter"></i></a>
+      <a href="https://linkedin.com/in/olivierharris" target="_blank" class="icon"><i class="fa fa-linkedin"></i></a>
+    </div>
+  </div>
+</section>
 
-  <h1 class="page-heading">Posts</h1>
+<section id="about">
+  <div class="section-heading">
+    <div class="container">
+      <h2>About Me</h2>
+    </div>
+  </div>
 
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+  <div class="summary text-bg">
+    <div class="container">
+      <div class="about-intro">
+        <p>
+          I'm an experienced web developer, driven by the pursuit of <a href="http://www.amazon.co.uk/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882">clean code</a> and <a href="http://chimera.labs.oreilly.com/books/1234000001813/index.html">software craftsmanship</a>.
+        </p>
+      </div>
 
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
+      <div class="tidbits">
+        <div class="tidbit">
+          <img src="/assets/img/icons/milestone.svg" alt="Flag" class="illustration">
+          <div>
+            <p>
+              My preferred technologies include Python, Django and JavaScript, though I will gladly work with whichever tool is best suited to the job at hand. I am a keen advocate of open-source software, and feel most at home in a Linux environment.
+            </p>
+          </div>
+        </div>
+
+        <div class="tidbit">
+          <img src="/assets/img/icons/project-manager.svg" alt="Project Management" class="illustration">
+          <div>
+            <p>
+              I also have experience in product development, project management and client relations, to which I bring immaculate communication skills and a particularly fine attention to detail.
+            </p>
+          </div>
+        </div>
+
+        <div class="tidbit">
+          <img src="/assets/img/icons/experience.svg" alt="User Experience" class="illustration">
+          <div>
+            <p>
+              My background in cognitive psychology offers me a deeper understanding of great user experience design, which I try to apply to each project I work on.
+            </p>
+          </div>
+        </div>
+
+        <div class="tidbit">
+          <img src="/assets/img/icons/meeting.svg" alt="Meet-ups" class="illustration">
+          <div>
+            <p>
+              I firmly believe in the idea of lifelong continuous self-improvement; I enjoy learning new skills and improving my knowledge in all aspects of life.
+            </p>
+          </div>
+        </div>
+
+        <div class="tidbit">
+          <img src="/assets/img/icons/inhouse-service.svg" alt="Hobbies" class="illustration">
+          <div>
+            <p>
+              As well as programming, I also enjoy cooking for friends and family, fixing things that might usually be thought of as beyond repair, and getting caught up in long, philosophical debates.
+            </p>
+          </div>
+        </div>
+
+        <div class="tidbit">
+          <img src="/assets/img/icons/light-bulb.svg" alt="Ideas" class="illustration">
+          <div>
+            <p>
+              I am available for consulting work via <a href="http://kabucreative.com">Kabu Creative</a> and am always looking to get involved in new endeavours - please <a href="http://kabucreative.com/contact-us/">get in touch</a> if you think I could add expertise and value to any of your projects.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% comment %}
+
+<section id="projects" class="solid-bg">
+  <div class="section-heading">
+    <div class="container">
+      <h2>Projects</h2>
+    </div>
+  </div>
+
+  <div class="container">
+    {% assign projects = site.projects %}
+    {% for project in projects %}
+      <div class="project row">
+      {% if project.intro_image %}
+        <div class="three columns logo">
+          <img src="{{ project.intro_image }}" alt="Project Logo" />
+        </div>
+        <div class="nine columns">
+      {% else %}
+        <div class="twelve columns">
+      {% endif %}
+          <h3><a href="{{ project.url }}">{{ project.title }}</a></h3>
+          <p class="meta">
+            {% for skill in project.skills %}
+              {{ skill }}{% if forloop.last != true %},{% endif %}
+            {% endfor %}
+          <div class="text-bg">
+            {{ project.introduction | markdownify }}
+          </div>
+          <a href="{{ project.url }}" class="button button-primary">Project Details</a>
+        </div>
+      </div>
     {% endfor %}
-  </ul>
+  </div>
+</section>
 
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+{% endcomment %}
 
-</div>
+{% comment %}
+
+<section id="blog">
+  <div class="section-heading">
+    <div class="container">
+      <h2>Blog</h2>
+      <a href="{{ "/feed.xml" | prepend: site.baseurl }}"><i class="fa fa-rss"></i></a>
+    </div>
+  </div>
+
+  <div>
+    {% for post in site.posts %}
+      <a href="{{ post.url | prepend: site.baseurl }}" class="post">
+        <span class="container">
+          <h3 class="pull-left">{{ post.title }}</h3>
+          <p class="meta pull-right">
+            {{ post.date | date: "%A," }}
+            {% assign d = post.date | date: "%-d" %}
+            {% case d %}
+              {% when "1" or "21" or "31" %}
+                {{ d }}st
+
+              {% when "2" or "22" %}
+                {{ d }}nd
+
+              {% when "3" or "23" %}
+                {{ d }}rd
+
+              {% else %}{{ d }}th
+            {% endcase %}
+            {{ post.date | date: "%B %Y" }}
+          </p>
+          <span class="clearfix"></span>
+        </span>
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+{% endcomment %}

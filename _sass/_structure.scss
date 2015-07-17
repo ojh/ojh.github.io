@@ -1,0 +1,82 @@
+// Generic Rules
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.clearfix {
+  display: block;
+  clear: both;
+}
+
+.centered {
+  margin: 0 auto;
+  width: auto;
+}
+
+.solid-bg {
+  background-color: $white;
+}
+
+img {
+  max-width: 100%;
+}
+
+// Site Structure
+body {
+  font-family: $sans-serif;
+  font-size: 20px;
+  line-height: 1.4em;
+  color: $dark-grey;
+  background-image: url("../../assets/img/bg_light.png");
+  background-position: center 40px;
+  background-attachment: fixed;
+  overflow-x: hidden;
+
+  @media (max-width: 500px) {
+    padding-top: 65px;
+  }
+}
+
+#site-content {
+  padding-top: 80px;
+
+  @media (max-width: 500px) {
+    padding-top: 0px;
+  }
+}
+
+.container {
+  max-width: 972px;
+  display: block;
+}
+
+.section-heading { //Horizontal headings
+  background-image: url("../../assets/img/bg_standard.png");
+  background-position: center 40px;
+  border-top: 1px solid $translucent-grey;
+  border-bottom: 1px solid $translucent-grey;
+
+  h2,
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 27px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+    line-height: 80px;
+    float: left;
+  }
+
+  a {
+    font-size: 25px;
+    padding: 10px 10px;
+    margin-top: 15px;
+    float: left;
+  }
+}
